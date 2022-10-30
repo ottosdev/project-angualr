@@ -1,0 +1,84 @@
+<mat-card class="card-container">
+  <mat-card-title>Tasks</mat-card-title>
+  <mat-card-subtitle
+    >Learning how to create a simple crud with angular</mat-card-subtitle
+  >
+</mat-card>
+
+<mat-card class="form-container">
+  <form class="example-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter task name"
+        formControlName="taskName"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input
+        matInput
+        placeholder="Enter task description"
+        formControlName="description"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add</button>
+  </form>
+
+  <div class="mat-elevation-z8" style="width: 100%">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.task_name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.task_description }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="created">
+        <th mat-header-cell *matHeaderCellDef>create_at</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.created_at | date: "dd/MM/yyyy" }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Opcoes</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="actions">
+            <button mat-raised-button color="accent" (click)="edit(element.id)">
+              Editar
+            </button>
+            <button mat-raised-button color="warn" (click)="delete(element.id)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</mat-card>

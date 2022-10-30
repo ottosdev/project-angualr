@@ -1,0 +1,38 @@
+{
+  "user": [
+    {
+      "id": "e142aee9-a6b0-46c6-86e4-8ab302d3e8a8",
+      "isAdmin": true,
+      "username": "Otto",
+      "password": "123"
+    },
+    {
+      "id": "457f384f-2327-40ff-b8ca-c6f6d0c6818c",
+      "username": "Neto",
+      "password": "123",
+      "isAdmin": true
+    },
+    {
+      "id": "7a80d99b-0fcb-4b70-9522-a56f443333e5",
+      "username": "Joao",
+      "password": "neto",
+      "isAdmin": true
+    }
+  ],
+  "task": [
+    {
+      "id": "c43028ce-90c6-46f8-b3b7-24e69dad78f3",
+      "task_name": "Otto Souza",
+      "task_description": "12345",
+      "user_id": "e142aee9-a6b0-46c6-86e4-8ab302d3e8a8",
+      "created_at": "Sun Oct 30 2022 19:25:42 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "782c4a96-6bbb-4e1b-815e-a8f9273df374",
+      "task_name": "Joao",
+      "task_description": "123",
+      "user_id": "e142aee9-a6b0-46c6-86e4-8ab302d3e8a8",
+      "created_at": "Sun Oct 30 2022 19:42:20 GMT-0300 (Horário Padrão de Brasília)"
+    }
+  ]
+}
