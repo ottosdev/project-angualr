@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dev": "npx json-server --watch server.json",
+    "dev": "npx json-server --watch db.json",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
