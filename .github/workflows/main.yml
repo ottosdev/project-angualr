@@ -1,0 +1,19 @@
+name: Angular Deploy
+
+
+on: 
+  push: # Verify ever push and after that all branches
+    branches: ["*"] # All branches needs be recoginezed.
+
+jobs: 
+  build: # Choose the machine like: Ubuntu
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with: 
+          node-verison: 16
+      - run: npm ci
+      - run: npm run test
+      - run: npm run start
+      - run: npm run build
