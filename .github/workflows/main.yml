@@ -1,18 +1,25 @@
+# This is a basic workflow to help you get started with Actions
 name: Angular Deploy
 
-
+# Controls when the workflow will run
 on: 
-  push: # Verify ever push and after that all branches
+# Triggers the workflow on push or pull request events but only for the main branch
+  push: 
     branches: ["*"] # All branches needs be recoginezed.
 
 jobs: 
-  build: # Choose the machine like: Ubuntu
+  # This workflow contains a single job called "build"
+  build: 
+   # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with: 
           node-version: 16
+
       - name: install
       - run: npm ci
 
