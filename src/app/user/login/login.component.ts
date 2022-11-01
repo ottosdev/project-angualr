@@ -42,11 +42,14 @@ export class LoginComponent implements OnInit {
           this.localService.saveLocalStorage(user);
           this.route.navigate(['/dashboard']);
         } else {
-          this.snackService.openSnackBar("User doesn't match", "close")
+          this.snackService.openSnackBar("User doesn't match", 'close');
         }
       },
       (err) => {
-        this.snackService.openSnackBar("Error, please contact the support", "close")
+        this.snackService.openSnackBar(
+          'Error, please contact the support',
+          'close'
+        );
       }
     );
   }
@@ -57,6 +60,4 @@ export class LoginComponent implements OnInit {
       password: [user.password, Validators.required],
     });
   }
-
-
 }

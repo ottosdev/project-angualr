@@ -1,24 +1,22 @@
 .card-container {
-    width: 400px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 14rem;
-    border-radius: 16px;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 14rem;
+  border-radius: 16px;
 }
 
 .form {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .input {
-    width: 100%;
+  width: 100%;
 }
-

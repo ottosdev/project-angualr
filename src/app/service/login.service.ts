@@ -26,7 +26,7 @@ export class LoginService {
   }
 
   logout() {
-    this.localService.clear()
+    this.localService.clear();
   }
 
   getLoginStatus() {
@@ -35,10 +35,10 @@ export class LoginService {
 
   getUsername() {
     const username = localStorage.getItem('username');
-    if(username) {
-      return JSON.parse(username)
+    if (username) {
+      return JSON.parse(username);
     }
-    return ""
+    return '';
   }
 
   getIsAdmin() {

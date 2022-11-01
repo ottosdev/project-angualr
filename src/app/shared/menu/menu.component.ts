@@ -12,10 +12,7 @@ export class MenuComponent implements OnInit, DoCheck {
   showFiller = true;
   isLoggin: boolean = false;
   name: string = '';
-  constructor(
-    private service: LoginService,
-    private route: Router,
-  ) {}
+  constructor(private service: LoginService, private route: Router) {}
 
   ngDoCheck(): void {
     this.isLoggin = this.service.getIsAdmin();
@@ -35,8 +32,7 @@ export class MenuComponent implements OnInit, DoCheck {
     this.isLoggin ? this.logout() : this.route.navigate(['/login']);
   }
 
-  
   goToSignUp() {
-    this.route.navigate(['/signup'])
+    this.route.navigate(['/signup']);
   }
 }

@@ -31,9 +31,8 @@ export class AuthorizedGuard implements CanActivate {
     const isAdmin = this.service.getIsAdmin();
     if (isAdmin) {
       return true;
-    } 
-      this.router.navigate(['/login']);
-      return false;
-    
+    }
+    this.router.navigate(['/login']);
+    return false;
   }
 }

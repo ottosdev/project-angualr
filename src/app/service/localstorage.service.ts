@@ -28,6 +28,4 @@ export class LocalstorageService {
   getLocalStorage(key: string) {
     return this.get(key);
   }
-
-
 }

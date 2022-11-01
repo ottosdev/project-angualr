@@ -22,7 +22,7 @@
     </nav>
   </mat-drawer>
   <mat-toolbar class="toolbar-space" color="primary">
-    <div *ngIf="isLoggin" >
+    <div *ngIf="isLoggin">
       <button *ngIf="!drawer.opened" mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -32,10 +32,17 @@
     </div>
     <span> {{ isLoggin ? name : "Authenticated App" }}</span>
     <span class="spacer"></span>
-    <button mat-raised-button color="secondary" (click)="signin();">
+    <button mat-raised-button color="secondary" (click)="signin()">
       {{ isLoggin ? "Logout" : "Signin" }}
     </button>
-    <button *ngIf="!isLoggin" mat-raised-button color="warn" (click)="goToSignUp()">Signup</button>
+    <button
+      *ngIf="!isLoggin"
+      mat-raised-button
+      color="warn"
+      (click)="goToSignUp()"
+    >
+      Signup
+    </button>
   </mat-toolbar>
 
   <div class="sidenav-content">

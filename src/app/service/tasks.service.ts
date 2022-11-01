@@ -14,8 +14,8 @@ export class TasksService {
     return this.http.post<Task>('http://localhost:3000/task', task);
   }
 
-  edit(id?:string, task?: Task): Observable<Task> {
-    debugger
+  edit(id?: string, task?: Task): Observable<Task> {
+    debugger;
     return this.http.put<Task>(`http://localhost:3000/task/${id}`, task);
   }
 
