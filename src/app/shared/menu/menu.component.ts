@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
@@ -8,7 +8,7 @@ import { LoginService } from 'src/app/service/login.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, DoCheck {
   showFiller = true;
   isLoggin: boolean = false;
   name: string = '';
@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
     private service: LoginService,
     private route: Router,
   ) {}
+
   ngDoCheck(): void {
     this.isLoggin = this.service.getIsAdmin();
     this.name = 'Bem vindo, ' + this.service.getUsername();
